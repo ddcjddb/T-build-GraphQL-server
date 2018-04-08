@@ -1,0 +1,20 @@
+{
+  "name": "t-build-graphql-server-with-graphql-and-express",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/server.js",
+  "scripts": {
+    "dev:server": "nodemon server/server.js",
+    "json:server": "json-server --watch data.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.3",
+    "express-graphql": "^0.6.12",
+    "graphql": "^0.13.2",
+    "json-server": "^0.12.1",
+    "nodemon": "^1.17.3"
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "customers": [
+    {
+      "id": "1",
+      "name": "John Doe",
+      "email": "john@gmail.com",
+      "age": 36
+    },
+    {
+      "id": "2",
+      "name": "Steve Smith",
+      "email": "steve@gmail.com",
+      "age": 25
+    },
+    {
+      "id": "3",
+      "name": "Sara Williams",
+      "email": "sara@gmail.com",
+      "age": 22
+    },
+    {
+      "id": "4",
+      "name": "Keith Willson",
+      "email": "Kieth@gmail.com",
+      "age": 36
+    },
+    {
+      "id": "5",
+      "name": "George Sky",
+      "email": "geogre@gmail.com",
+      "age": 32
+    },
+    {
+      "id": "6",
+      "name": "Max Yang",
+      "email": "max@gmail.com",
+      "age": 47
+    },
+    {
+      "id": "7",
+      "name": "Tom Jones",
+      "email": "tom@gmail.com",
+      "age": 13
+    },
+    {
+      "id": "8",
+      "name": "Sam Marks",
+      "email": "sam@gmail.com",
+      "age": 47
+    },
+    {
+      "id": "9",
+      "name": "Jen Thompson",
+      "email": "jen@gmail.com",
+      "age": 22
+    },
+    {
+      "name": "Herry White",
+      "email": "herry@gmail.com",
+      "age": 41,
+      "id": "YCxxEXa"
+    }
+  ]
+}
