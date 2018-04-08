@@ -109,6 +109,7 @@ const mutation = new GraphQLObjectType({
         age: { type: new GraphQLNonNull(GraphQLInt) }
       },
       resolve(parentValue, args) {
+        //研究下有没有同步方法？
         //异步的 数据发送至port3000  通过json-server连接至data.json
         return (
           axios
@@ -118,6 +119,48 @@ const mutation = new GraphQLObjectType({
               age: args.age
             })
             //post 过去也是个promise？then 怎么解释？
+            .then(res => res.data)
+        );
+      }
+    },
+    //chrome graphql插件中
+    // mutation{
+    //     deleteCustomer(id:"3"){
+    //       id
+    //     }
+    //   }
+    deleteCustomer: {
+      type: CustomerType,
+      args: {
+        id: { type: new GraphQLNonNull(GraphQLString) }
+      },
+      resolve(parentValue, args) {
+        return axios
+          .delete("http://localhost:3000/customers/" + args.id)
+          .then(res => res.data);
+        //删除是因为axios.delete  请求头删除
+      }
+    },
+    //chrome graphql插件中
+    // mutation{
+    //     editCustomer(id:"3",age:100){  //需要改什么就写什么属性
+    //       id                 //内部至少需要一个属性（随意，能识别即可），不能为空
+    //     }
+    //   }
+    editCustomer: {
+      type: CustomerType,
+      args: {
+        //name,email,age 三者不需要GraphQLNonNull，如果不填写则对原对象不进行修稿==修改
+        id: { type: new GraphQLNonNull(GraphQLString) },
+        name: { type: GraphQLString },
+        email: { type: GraphQLString },
+        age: { type: GraphQLInt }
+      },
+      resolve(parentValue, args) {
+        return (
+          axios
+            //patch是进行修改覆盖   直接传入args 理解为类似react 的setState 有则改，无则不变
+            .patch("http://localhost:3000/customers/" + args.id, args)
             .then(res => res.data)
         );
       }

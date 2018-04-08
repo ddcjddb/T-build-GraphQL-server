@@ -1,6 +1,7 @@
 //import   需要转义，require是es5写法 不需要babel,暂时不会配置
 // import express from "express";
 //node运行需要相对完全路径至具体文件
+//参照package.json  运行npm run dev:server  以及 json:server
 
 const express = require("express");
 const expressGraphQL = require("express-graphql");
